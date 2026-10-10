@@ -31,7 +31,7 @@ export default class StatusChart extends Component {
 	}
 
 	componentDidMount() {
-        axios.get('http://localhost:5000/tickets/')
+        axios.get('/tickets/')
             .then(res => {
                 this.setState({ tickets: res.data });
                 this.state.tickets.map(ticket => {

@@ -55,7 +55,7 @@ export default class CreateUser extends Component {
 
         console.log(user);
 
-        axios.post('http://localhost:5000/users/create', user)
+        axios.post('/users/create', user)
             .then(res => console.log(res.data));
 
         // clear form

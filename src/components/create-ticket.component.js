@@ -40,7 +40,7 @@ export default class CreateTicket extends Component {
       });
 
       // get list of users to set default assignee
-      axios.get('http://localhost:5000/users/')
+      axios.get('/users/')
         .then(res => {
             if(res.data.length > 0) {
                 this.setState({
@@ -52,7 +52,7 @@ export default class CreateTicket extends Component {
         .catch((error) => { console.log(error); })
 
         // get list of projects to set default project
-      axios.get('http://localhost:5000/projects/')
+      axios.get('/projects/')
         .then(res => {
             if(res.data.length > 0) {
                 this.setState({
@@ -119,7 +119,7 @@ export default class CreateTicket extends Component {
             type: this.state.type
         }
 
-        axios.post('http://localhost:5000/tickets/create', ticket)
+        axios.post('/tickets/create', ticket)
             .then(res => console.log(res.data))
 
         alert('Successfully created.');

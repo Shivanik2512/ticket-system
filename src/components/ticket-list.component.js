@@ -12,7 +12,7 @@ export default class TicketList extends Component {
 	}
 
     componentDidMount() {
-        axios.get('http://localhost:5000/tickets/')
+        axios.get('/tickets/')
             .then(res => {
                 this.setState({ tickets: res.data })
             })
@@ -20,7 +20,7 @@ export default class TicketList extends Component {
     }
 
     deleteTicket(id) {
-	    axios.delete('http://localhost:5000/tickets/'+id)
+	    axios.delete('/tickets/'+id)
 	        .then(res => { console.log(res.data)});
 
 	    // update tickets array to all tickets without matching id

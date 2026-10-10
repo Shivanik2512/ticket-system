@@ -16,7 +16,7 @@ export default class CreateProject extends Component {
 
     componentDidMount() {
         // get list of projects to set default project
-        axios.get('http://localhost:5000/projects/')
+        axios.get('/projects/')
             .then(res => {
                 if(res.data.length > 0) {
                     this.setState({
@@ -42,7 +42,7 @@ export default class CreateProject extends Component {
 
         console.log(project);
 
-        axios.post('http://localhost:5000/projects/create', project)
+        axios.post('/projects/create', project)
             .then(res => console.log(res.data));
 
         // clear form
